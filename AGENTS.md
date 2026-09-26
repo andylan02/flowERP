@@ -9,3 +9,17 @@
 - 可用库存不得为负，预占原子化；同一入库幂等键只生效一次；订单状态遵守状态机，取消释放预占；采购须人工审批后入库。
 - 修改业务规则须包含正常和失败路径测试。保留幂等、鉴权、审计和人工职责分离。
 - 检查命令：`python -X utf8 -m unittest discover -s tests -v`；`python -X utf8 -m eval.harness --suite blocking`；`node --test tests/flowerp_boot.test.cjs tests/flowerp_inventory_filter.test.cjs tests/flowerp_purchase_recovery.test.cjs`。
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues 作为本仓库的任务跟踪入口，统一使用 `gh` CLI。详情见 `docs/agents/issue-tracker.md`。
+
+### Triage labels
+
+本仓库使用默认五类 triage 标签：`needs-triage`、`needs-info`、`ready-for-agent`、`ready-for-human`、`wontfix`。详情见 `docs/agents/triage-labels.md`。
+
+### Domain docs
+
+当前仓库采用单上下文结构，优先读取仓库根目录的 `CONTEXT.md` 与 `docs/adr/`。详情见 `docs/agents/domain.md`。
